@@ -1,0 +1,40 @@
+{
+  "name": "@focus-list/todo-list",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist/**"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint \"**/*.ts*\"",
+    "test": "jest",
+    "build": "tsup index.tsx --format esm,cjs --dts --external react --external antd"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "*",
+    "jest": "^29.7.0",
+    "react": "^18.0.2",
+    "tsconfig": "*",
+    "typescript": "^4.5.2"
+  },
+  "peerDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/pro-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "antd": "5.15.4"
+  },
+  "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@jest/globals": "^29.7.0",
+    "antd": "^5.24.3"
+  }
+}

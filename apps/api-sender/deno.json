@@ -1,0 +1,11 @@
+{
+    "imports": {
+      "$std/": "https://deno.land/std@0.203.0/"
+      
+    },
+    "importMap": "import_map.json",
+    "tasks": {
+      "dev": "deno run --allow-net main.ts"
+    }
+  }
+  
