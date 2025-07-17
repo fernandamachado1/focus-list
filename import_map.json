@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "@infra/": "./core/infra/",
+    "@surreal/": "./core/infra/surreal/src/",
+    "@todoList/": "./core/todoList/src/",
+     "surrealdb": "https://deno.land/x/surrealdb/mod.ts"
+
+
+  }
+}
