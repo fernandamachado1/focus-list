@@ -1,0 +1,24 @@
+// {
+//   "version": "5",
+//   "redirects": {
+//     "https://deno.land/x/surrealdb/mod.ts": "https://deno.land/x/surrealdb@v1.3.2/mod.ts"
+//   },
+//   "remote": {
+//     "https://cdn.jsdelivr.net/npm/surrealdb": "840d60bdbf0ad798286378c8816d230f5087b683cb29528aaad4a19133841606"
+//   },
+//   "workspace": {
+//     "packageJson": {
+//       "dependencies": [
+//         "npm:@types/react-dom@^18.2.0",
+//         "npm:@types/react@^18.2.0",
+//         "npm:eslint-config-custom@*",
+//         "npm:eslint@^7.32.0",
+//         "npm:jest@^29.7.0",
+//         "npm:react@^18.0.2",
+//         "npm:surrealdb@^1.3.2",
+//         "npm:tsconfig@*",
+//         "npm:typescript@^4.5.2"
+//       ]
+//     }
+//   }
+// }

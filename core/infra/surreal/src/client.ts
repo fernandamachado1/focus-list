@@ -1,30 +1,28 @@
-import { Surreal } from "surrealdb";
+// packages/core/infra/surreal.ts
 
-const db = new Surreal();
+const SURREAL_URL = "http://localhost:8000/sql";
+const USER = "root";
+const PASS = "root";
+const AUTH = "Basic " + btoa(`${USER}:${PASS}`);
 
-let isConnected = false;
+export async function surrealQuery(query: string) {
+  const response = await fetch(SURREAL_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/surrealql", 
+      "NS": "gand",
+      "DB": "gand",
+      "Authorization": AUTH,
+    },
+    body: query,
+  });
 
-export async function connectToSurreal() {
-    if (isConnected) return db;
+  const result = await response.json();
 
-    const SURREAL_HOST = "http://localhost:8000/rpc";
-    const SURREAL_NAMESPACE = "gand";
-    const SURREAL_DATABASE = "gand";
-    const SURREAL_USERNAME = "root";
-    const SURREAL_PASSWORD = "root";
+  if (!response.ok || result[0]?.status !== "OK") {
+    console.error("Erro ao executar query:", result);
+    throw new Error(result[0]?.detail || "Erro na consulta SurrealDB");
+  }
 
-    await db.connect(SURREAL_HOST, {
-        namespace: SURREAL_NAMESPACE,
-        database: SURREAL_DATABASE,
-        auth: {
-            username: SURREAL_USERNAME,
-            password: SURREAL_PASSWORD,
-        },
-    });
-
-    isConnected = true;
-    console.log("[Surreal] Conectado");
-    return db;
+  return result[0].result;
 }
-
-export { db };

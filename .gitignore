@@ -1,7 +1,7 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Ignore all node_modules recursively
+**/node_modules/
 
 # dependencies
-node_modules
 .pnp
 .pnp.js
 
@@ -35,6 +35,5 @@ yarn-error.log*
 # vercel
 .vercel
 
-core/infra/surreal/dist
-core/todoList/dist
-core/todoList/node_modules
+# dist folders
+**/dist/

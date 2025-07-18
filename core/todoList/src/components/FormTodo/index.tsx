@@ -1,3 +1,6 @@
+"use client";
+
+
 import { SetStateAction, useState } from "react";
 import { Input, Button, Select, DatePicker, Form } from "antd";
 
