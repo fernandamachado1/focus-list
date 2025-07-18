@@ -7,11 +7,11 @@ let isConnected = false;
 export async function connectToSurreal() {
     if (isConnected) return db;
 
-    const SURREAL_HOST = "";
-    const SURREAL_NAMESPACE = ""
-    const SURREAL_DATABASE = ""
-    const SURREAL_USERNAME = ""
-    const SURREAL_PASSWORD = ""
+    const SURREAL_HOST = "http://localhost:8000/rpc";
+    const SURREAL_NAMESPACE = "gand";
+    const SURREAL_DATABASE = "gand";
+    const SURREAL_USERNAME = "root";
+    const SURREAL_PASSWORD = "root";
 
     await db.connect(SURREAL_HOST, {
         namespace: SURREAL_NAMESPACE,
@@ -20,25 +20,11 @@ export async function connectToSurreal() {
             username: SURREAL_USERNAME,
             password: SURREAL_PASSWORD,
         },
-        async prepare(connection) {
-            const token = getToken();
-            if (token) {
-                try {
-                    await connection.authenticate(token);
-                    console.log("deu");
-                } catch (e) {
-                    console.error("Error", e);}
-            }
-        },
     });
 
     isConnected = true;
     console.log("[Surreal] Conectado");
     return db;
-}
-
-function getToken(): string | null {
-    return null;
 }
 
 export { db };
