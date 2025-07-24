@@ -1,10 +1,35 @@
-// test.ts
+import { connectToSurreal } from "@infra/index.ts";
 
-import { surrealQuery } from "./core/infra/index.tsx";
+const client = connectToSurreal();
 
+const run = async () => {
+  try {
+    // Teste simples de criação
+    const created = await client.create("task", {
+      title: "Tarefa de teste",
+      done: false,
+    });
+    console.log("Criado:", created);
 
-const result = await surrealQuery(
-  "CREATE task SET title = 'Aprender Deno', completed = false;"
-);
+    // Buscar tudo da tabela
+    const allTasks = await client.select("task");
+    console.log("Selecionado:", allTasks);
 
-console.log("Tarefa criada:", result);
+    // Atualizar a primeira task (se existir)
+    if (allTasks.length > 0) {
+      const id = allTasks[0].id.split(":")[1]; // pega apenas o ID sem o prefixo
+      const updated = await client.update("task", id, {
+        title: "Tarefa atualizada",
+        done: true,
+      });
+      console.log("Atualizado:", updated);
+    }
+
+    // Deletar a primeira task (opcional)
+    // await client.delete("task", id);
+  } catch (err) {
+    console.error("Erro no teste:", err);
+  }
+};
+
+run();

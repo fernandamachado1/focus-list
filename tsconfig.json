@@ -18,9 +18,10 @@
         "name": "next"
       }
     ],
-    "paths": {
-      "@/*": ["./apps/*"],
-      "@core/*": ["./packages/core/*"],
+   "paths": {
+      "@infra/*": ["core/infra/*"],
+      "@handlers/*": ["apps/api-sender/handlers/*"],
+      "@web/*": ["apps/web/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

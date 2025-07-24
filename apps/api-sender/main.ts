@@ -1,6 +1,5 @@
 import { serve } from "https://deno.land/std@0.195.0/http/server.ts";
-import { connectToSurreal } from "@surreal/client.ts";
-
+import { connectToSurreal } from "@infra/index.ts";
 const db = await connectToSurreal();
 
 console.log("🚀 API rodando...");

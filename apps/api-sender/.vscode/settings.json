@@ -1,6 +1,3 @@
 {
-    "deno.enable": true,
-    "deno.unstable": [],
-    "deno.lint": true
-  }
-  
+    "deno.enable": true
+}
