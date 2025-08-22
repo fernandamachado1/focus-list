@@ -4,30 +4,30 @@
   "workspaces": [
     "packages/*",
     "apps/*",
-    "core/*"
+    "core/*",
+    "ui-kit"
   ],
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "start": "next start",    
+    "start": "next start",
     "build:force": "turbo run build --force",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "test": "turbo run test"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.2.2",
     "ts-jest": "^29.4.0",
-    "@focus-list/infra": "*"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "next": "15.2.2"
   },
   "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
     "typescript": "^5",
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.2.2",
     "@eslint/eslintrc": "^3",
@@ -36,5 +36,4 @@
     "tsup": "^7.2.0",
     "turbo": "^1.10.14"
   }
-  
 }

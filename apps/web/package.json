@@ -9,14 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    
-     "next": "15.2.2",
+    "next": "15.2.2",
     "@tanstack/react-query": "5.18.1",
     "react": "^18",
     "react-dom": "^18",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
-    "@fortawesome/react-fontawesome": "^0.2.0"
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@focus-list/ui-kit": "*"
   },
   "devDependencies": {
     "@types/node": "^20",

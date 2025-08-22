@@ -1,8 +1,0 @@
-{
-  "imports": {
-    "@infra/": "./core/infra/"
-  },
-  "tasks": {
-    "test": "deno run --allow-net test.ts"
-  }
-}

@@ -8,22 +8,19 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
-   "paths": {
+    "baseUrl": ".", 
+    "paths": {
       "@infra/*": ["core/infra/*"],
+      "@ui/*": ["core/ui/*"],
       "@handlers/*": ["apps/api-sender/handlers/*"],
       "@web/*": ["apps/web/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["apps/**/*", "packages/**/*", "core/**/*"],
+  "exclude": ["node_modules", "**/dist", ".next"]
 }

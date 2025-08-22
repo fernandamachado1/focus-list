@@ -1,5 +1,5 @@
 {
-  "name": "@focus-list/infra",
+  "name": "@focus-list/ui-kit",
   "version": "0.0.1",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -8,30 +8,30 @@
   "files": [
     "dist/**"
   ],
-  
   "license": "MIT",
   "scripts": {
     "lint": "eslint \"**/*.ts*\"",
     "test": "jest",
-    "build": "tsup src/index.ts --format esm,cjs --dts --external react --external antd"
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react --external antd"
   },
   "devDependencies": {
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
+    "@types/json-schema": "^7.0.15",
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
     "jest": "^29.7.0",
-    "react": "^18.0.2",
     "tsconfig": "*",
-    "typescript": "^4.5.2"
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5",
+    "tsup": "^7.2.0",
+    "antd": "^5.24.3"
   },
   "peerDependencies": {
-    
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "dependencies": {
-   
     "@jest/globals": "^29.7.0",
-    "antd": "^5.24.3",
-    "surrealdb": "^1.3.2"
+    "antd": "^5.24.3"
   }
 }
