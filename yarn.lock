@@ -633,6 +633,12 @@
     "@eslint/core" "^0.15.2"
     levn "^0.4.1"
 
+"@focus-list/ui-kit@file:ui-kit":
+  version "0.0.1"
+  dependencies:
+    "@jest/globals" "^29.7.0"
+    antd "^5.24.3"
+
 "@fortawesome/fontawesome-common-types@6.7.2":
   version "6.7.2"
   resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.7.2.tgz#7123d74b0c1e726794aed1184795dbce12186470"
